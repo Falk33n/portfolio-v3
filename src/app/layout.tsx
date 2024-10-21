@@ -1,3 +1,4 @@
+import { Sidebar } from '@/components';
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
@@ -93,6 +94,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body className={`${inter.className} antialiased w-full`}>
+        <Sidebar />
         {children}
       </body>
     </html>
