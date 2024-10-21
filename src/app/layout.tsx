@@ -93,9 +93,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
           href='/favicon/site.webmanifest'
         />
       </head>
-      <body className={`${inter.className} antialiased w-full`}>
+      <body
+        className={`${inter.className} antialiased w-full px-6 md:px-12 lg:px-20 py-12 md:py-20 lg:py-24 xl:w-[1280px] xl:mx-auto`}
+      >
         <Sidebar />
-        {children}
+        <main
+          aria-label='Main content.'
+          id='main-content'
+        >
+          {children}
+        </main>
       </body>
     </html>
   );
