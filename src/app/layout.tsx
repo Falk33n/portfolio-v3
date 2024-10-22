@@ -94,12 +94,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body
-        className={`${inter.className} antialiased w-full px-6 md:px-12 lg:px-20 py-12 md:py-20 lg:py-24 xl:w-[1280px] xl:mx-auto`}
+        className={`${inter.className} antialiased flex flex-col gap-28 lg:flex-row lg:justify-between lg:gap-4 w-full px-6 md:px-12 lg:px-20 py-12 md:py-20 lg:py-24 xl:w-[1280px] xl:mx-auto`}
       >
         <Sidebar />
         <main
           aria-label='Main content.'
           id='main-content'
+          className='lg:w-1/2'
         >
           {children}
         </main>

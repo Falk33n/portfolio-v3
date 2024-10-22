@@ -1,30 +1,36 @@
+'use client';
+
+import { useScrollPosition } from '@/hooks';
+import { cn } from '@/lib';
 import Link from 'next/link';
-import type { IconType } from 'react-icons';
+import type { ReactNode } from 'react';
 
 type NavLinkProps = {
   href: string;
   srText: string;
-  Icon: IconType;
-  target?: '_blank' | '_self' | '_parent' | '_top';
+  children: ReactNode;
+  describes: string;
 };
 
 export const NavLink = ({
   href,
   srText,
-  Icon,
-  target = '_blank',
+  children,
+  describes,
 }: NavLinkProps) => {
+  const isCurrent = useScrollPosition(describes);
+
   return (
     <li role='menuitem'>
       <Link
         href={href}
-        target={target}
-        className='inline-flex bg-accent hover:bg-primary p-2.5 rounded-full hover:text-primary-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2'
+        className={cn(
+          'inline-flex relative before:relative before:left-0 py-2 items-center gap-6 before:bg-foreground/35 rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 before:w-8 before:h-px font-semibold before:rounded-full text-foreground/60 text-xs hover:text-foreground focus-visible:text-foreground uppercase transition-colors focus-visible:outline-none before:transition-all',
+          'data-[is-current=true]:before:bg-foreground data-[is-current=true]:before:w-20 data-[is-current=true]:before:h-[2px] data-[is-current=true]:text-foreground hover:before:bg-foreground focus-visible:before:bg-foreground hover:before:w-20 focus-visible:before:w-20 hover:before:h-[2px] focus-visible:before:h-[2px]'
+        )}
+        data-is-current={isCurrent}
       >
-        <Icon
-          aria-hidden
-          className='size-5'
-        />
+        <span aria-hidden>{children}</span>
         <span className='sr-only'>{srText}</span>
       </Link>
     </li>
