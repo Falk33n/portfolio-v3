@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 
-export const useScrollPosition = (id: string) => {
+export type SectionId = 'about' | 'experience' | 'projects';
+
+export const useScrollPosition = (id: SectionId) => {
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
@@ -17,7 +19,7 @@ export const useScrollPosition = (id: string) => {
       const visibleRatio =
         visibleHeight > 0 ? visibleHeight / sectionHeight : 0;
 
-      setIsInView(visibleRatio >= 0.4);
+      setIsInView(visibleRatio >= 0.65);
     };
 
     window.addEventListener('scroll', handleScroll);

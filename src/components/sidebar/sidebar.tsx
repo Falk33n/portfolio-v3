@@ -1,4 +1,4 @@
-import { NavIcon, NavLink } from '@/components';
+import { NavIcon, NavLink } from '@/components/sidebar';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 import { IoDocumentText } from 'react-icons/io5';
