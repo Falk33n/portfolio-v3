@@ -1,8 +1,6 @@
 import { NavIcon, NavLink } from '@/components/sidebar';
+import { navIconData, navLinkData } from '@/data';
 import Link from 'next/link';
-import { FaGithub, FaLinkedin } from 'react-icons/fa6';
-import { IoDocumentText } from 'react-icons/io5';
-import { MdMail } from 'react-icons/md';
 
 export const Sidebar = () => {
   return (
@@ -39,53 +37,23 @@ export const Sidebar = () => {
         role='menu'
         className='lg:flex flex-col gap-2.5 hidden'
       >
-        <NavLink
-          href='#about'
-          srText='Go to about me.'
-          describes='about'
-        >
-          About
-        </NavLink>
-        <NavLink
-          href='#experience'
-          srText='Go to my experience.'
-          describes='experience'
-        >
-          Experience
-        </NavLink>
-        <NavLink
-          href='#projects'
-          srText='Go to my projects.'
-          describes='projects'
-        >
-          Projects
-        </NavLink>
+        {navLinkData.map((data, i) => (
+          <NavLink
+            key={i}
+            {...data}
+          />
+        ))}
       </ul>
       <ul
         className='flex flex-wrap lg:flex-1 items-center lg:items-end gap-5'
         role='menu'
       >
-        <NavIcon
-          Icon={FaGithub}
-          href='https://github.com/falk33n'
-          srText='Go to my GitHub page.'
-        />
-        <NavIcon
-          Icon={FaLinkedin}
-          href='https://www.linkedin.com/in/timfalkwebbdev'
-          srText='Go to my LinkedIn page.'
-        />
-        <NavIcon
-          Icon={MdMail}
-          href='mailto:tim.falk00@gmail.com'
-          srText='Send an email to me.'
-          target='_self'
-        />
-        <NavIcon
-          Icon={IoDocumentText}
-          href=''
-          srText='Go to my résumé.'
-        />
+        {navIconData.map((data, i) => (
+          <NavIcon
+            key={i}
+            {...data}
+          />
+        ))}
       </ul>
     </nav>
   );

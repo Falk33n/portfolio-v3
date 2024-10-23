@@ -1,4 +1,4 @@
-import { CardProps } from '@/components/section';
+import type { CardProps } from '@/components/section';
 
 export const experienceData: CardProps[] = [
   {

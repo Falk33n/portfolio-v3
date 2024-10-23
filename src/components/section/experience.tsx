@@ -1,5 +1,5 @@
 import { Card, Section } from '@/components/section';
-import { experienceData } from '@/lib';
+import { experienceData } from '@/data';
 import Link from 'next/link';
 import { WiDirectionUpRight } from 'react-icons/wi';
 
