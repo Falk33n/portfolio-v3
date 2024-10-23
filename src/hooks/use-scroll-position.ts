@@ -4,7 +4,21 @@ import { useEffect, useState } from 'react';
 
 export type SectionId = 'about' | 'experience' | 'projects';
 
-export const useScrollPosition = () => {
+/**
+ * The hook determines which section of the page is most visible based on scroll position.
+ * It updates the active section as the user scrolls through the page.
+ *
+ * The sections monitored are:
+ * - 'about'
+ * - 'experience'
+ * - 'projects'
+ *
+ * If no section is highly visible, it defaults to the 'about' section.
+ *
+ * @returns {SectionId} The ID of the currently active section based on scroll position.
+ */
+
+export const useScrollPosition = (): SectionId => {
   const [activeSection, setActiveSection] = useState<SectionId>('about');
 
   useEffect(() => {
@@ -32,8 +46,7 @@ export const useScrollPosition = () => {
         if (visibleRatio > highestVisibleRatio) {
           highestVisibleRatio = visibleRatio;
           currentSection = id;
-        }
-        if (visibleRatio >= 0.7) {
+        } else if (visibleRatio >= 0.7) {
           currentSection = id;
         }
       });

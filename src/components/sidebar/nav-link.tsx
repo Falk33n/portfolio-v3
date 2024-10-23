@@ -5,7 +5,7 @@ import { cn } from '@/lib';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
-type NavLinkProps = {
+export type NavLinkProps = {
   href: string;
   srText: string;
   children: ReactNode;

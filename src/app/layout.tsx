@@ -1,4 +1,4 @@
-import { Sidebar } from '@/components';
+import { Sidebar } from '@/components/sidebar';
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { IconType } from 'react-icons';
 
-type NavIconProps = {
+export type NavIconProps = {
   href: string;
   srText: string;
   Icon: IconType;
