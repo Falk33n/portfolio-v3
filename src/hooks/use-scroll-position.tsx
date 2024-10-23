@@ -2,22 +2,43 @@
 
 import { useEffect, useState } from 'react';
 
-export const useScrollPosition = (id: string) => {
-  const [isInView, setIsInView] = useState(false);
+export type SectionId = 'about' | 'experience' | 'projects';
+
+export const useScrollPosition = () => {
+  const [activeSection, setActiveSection] = useState<SectionId>('about');
 
   useEffect(() => {
     const handleScroll = () => {
-      const section = document.getElementById(id);
-      if (!section) return;
+      if (window.scrollY >= 0 && window.scrollY <= 100) {
+        setActiveSection('about');
+        return;
+      }
 
-      const rect = section.getBoundingClientRect();
-      const sectionHeight = rect.height;
-      const visibleHeight =
-        Math.min(window.innerHeight, rect.bottom) - Math.max(0, rect.top);
-      const visibleRatio =
-        visibleHeight > 0 ? visibleHeight / sectionHeight : 0;
+      const sections: SectionId[] = ['about', 'experience', 'projects'];
+      let currentSection: SectionId | null = null;
+      let highestVisibleRatio = 0;
 
-      setIsInView(visibleRatio >= 0.4);
+      sections.forEach((id) => {
+        const section = document.getElementById(id);
+        if (!section) return;
+
+        const rect = section.getBoundingClientRect();
+        const sectionHeight = rect.height;
+        const visibleHeight =
+          Math.min(window.innerHeight, rect.bottom) - Math.max(0, rect.top);
+        const visibleRatio =
+          visibleHeight > 0 ? visibleHeight / sectionHeight : 0;
+
+        if (visibleRatio > highestVisibleRatio) {
+          highestVisibleRatio = visibleRatio;
+          currentSection = id;
+        }
+        if (visibleRatio >= 0.7) {
+          currentSection = id;
+        }
+      });
+
+      setActiveSection(currentSection || 'about');
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -25,7 +46,7 @@ export const useScrollPosition = (id: string) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [id]);
+  }, []);
 
-  return isInView;
+  return activeSection;
 };

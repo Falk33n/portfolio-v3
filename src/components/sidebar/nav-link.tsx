@@ -1,6 +1,6 @@
 'use client';
 
-import { useScrollPosition } from '@/hooks';
+import { type SectionId, useScrollPosition } from '@/hooks';
 import { cn } from '@/lib';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
@@ -9,7 +9,7 @@ type NavLinkProps = {
   href: string;
   srText: string;
   children: ReactNode;
-  describes: string;
+  describes: SectionId;
 };
 
 export const NavLink = ({
@@ -18,7 +18,8 @@ export const NavLink = ({
   children,
   describes,
 }: NavLinkProps) => {
-  const isCurrent = useScrollPosition(describes);
+  const activeSection = useScrollPosition();
+  const isCurrent = activeSection === describes;
 
   return (
     <li role='menuitem'>
