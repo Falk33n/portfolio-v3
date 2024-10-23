@@ -1,8 +1,7 @@
 'use client';
 
+import type { SectionId } from '@/components/section';
 import { useEffect, useState } from 'react';
-
-export type SectionId = 'about' | 'experience' | 'projects';
 
 /**
  * The hook determines which section of the page is most visible based on scroll position.
