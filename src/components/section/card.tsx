@@ -61,7 +61,7 @@ export const Card = ({
         <h3>
           <Link
             href={href}
-            className='rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 hover:text-primary transition-colors focus-visible:outline-none lg:group-hover:text-primary lg:focus-visible:text-primary'
+            className='lg:group-hover:text-primary inline-flex rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 lg:focus-visible:text-primary hover:text-primary transition-colors focus-visible:outline-none'
             target='_blank'
           >
             <span
@@ -71,7 +71,7 @@ export const Card = ({
               {title}{' '}
               <span
                 aria-hidden
-                className='inline-block'
+                className='inline'
               >
                 {company && <>{`@ ${company}`}</>}{' '}
                 <WiDirectionUpRight
