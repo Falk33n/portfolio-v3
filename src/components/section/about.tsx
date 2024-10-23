@@ -8,9 +8,9 @@ export const About = () => {
         about it. While studying at{' '}
         <InlineLink
           href='https://www.tucsweden.se/?gad_source=1&gclid=Cj0KCQjwmt24BhDPARIsAJFYKk1MssazM3SpAeBeotKwLmbpMmzpbxSW3qUSrjtlS1wX5PbkajQqCD8aAo9jEALw_wcB'
-          srText="Go to TUC Yrkeshögskola's website."
+          srText="Go to TUC University College's website."
         >
-          TUC Yrkeshögskola
+          TUC University College
         </InlineLink>{' '}
         in Jönköping, I earned top grades. During my first internship, I
         discovered the{' '}
@@ -36,9 +36,9 @@ export const About = () => {
         in my free time.
       </p>
       <p>
-        When I&apos;m not working on creating websites, I usually go for a walk
-        in the forest, build furniture, or explore a world{' '}
-        <span>full of blocks and creepers</span>.
+        When I&apos;m not working on creating websites or studying, I usually go
+        for a walk in the forest, build furniture, or explore a world full of
+        blocks and creepers.
       </p>
     </Section>
   );

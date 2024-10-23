@@ -5,6 +5,7 @@ export default function Home() {
     <>
       <About />
       <Experience />
+      make sticky header on small device
       <div id='projects'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo
         placeat alias, quibusdam ullam eum natus ut qui doloremque. Perspiciatis

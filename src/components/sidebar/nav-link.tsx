@@ -18,7 +18,8 @@ export const NavLink = ({
   children,
   describes,
 }: NavLinkProps) => {
-  const isCurrent = useScrollPosition(describes);
+  const activeSection = useScrollPosition();
+  const isCurrent = activeSection === describes;
 
   return (
     <li role='menuitem'>

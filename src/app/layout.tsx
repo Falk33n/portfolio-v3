@@ -58,6 +58,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html
       lang='en'
       suppressHydrationWarning
+      className='scroll-smooth'
     >
       <head>
         <link
