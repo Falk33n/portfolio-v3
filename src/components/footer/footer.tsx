@@ -1,4 +1,4 @@
-import { InlineLink } from '../section';
+import { InlineLink } from '@/components/section';
 
 export const Footer = () => {
   return (
