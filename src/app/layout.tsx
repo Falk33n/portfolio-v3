@@ -101,7 +101,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <main
           aria-label='Main content.'
           id='main-content'
-          className='flex flex-col gap-20 lg:w-1/2'
+          className='flex flex-col gap-16 lg:w-1/2'
         >
           {children}
         </main>

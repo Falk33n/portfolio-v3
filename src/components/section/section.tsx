@@ -25,7 +25,9 @@ export const Section = ({ id, children }: SectionProps) => {
       aria-label={getAriaLabel(id)}
       className={cn(id === 'about' ? 'lg:px-4' : '', 'scroll-mt-20')}
     >
-      <h3 className='lg:hidden mb-8 font-bold text-sm uppercase'>{id}</h3>
+      <h3 className='top-0 sticky lg:hidden bg-background/75 backdrop-blur-sm mb-4 py-4 font-bold text-sm uppercase'>
+        {id}
+      </h3>
       {children}
     </section>
   );
