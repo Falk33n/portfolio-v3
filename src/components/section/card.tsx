@@ -1,11 +1,18 @@
 import { Badge } from '@/components/section';
+import Image from 'next/image';
 import Link from 'next/link';
 import { WiDirectionUpRight } from 'react-icons/wi';
 
 export type CardProps = {
-  jobTitle: string;
-  timeline: string;
-  company: string;
+  title: string;
+  img?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+  timeline?: string;
+  company?: string;
   href: string;
   description: string;
   srText: string;
@@ -13,13 +20,14 @@ export type CardProps = {
 };
 
 export const Card = ({
-  jobTitle,
+  title,
   timeline,
   company,
   href,
   description,
   srText,
   techStack,
+  img,
 }: CardProps) => {
   return (
     <div className='lg:relative lg:z-[1] flex md:flex-row flex-col md:justify-between md:items-baseline gap-1.5 lg:gap-5 lg:hover:shadow-md lg:focus-within:shadow-md lg:p-4 lg:pb-5 lg:border lg:border-transparent lg:focus-within:border-border lg:hover:border-border rounded-md transition-all group'>
@@ -30,9 +38,21 @@ export const Card = ({
         tabIndex={-1}
         className='lg:block z-[3] absolute inset-0 hidden size-full'
       />
-      <h6 className='md:w-[22.5%] text-accent-foreground text-xs uppercase'>
-        {timeline}
-      </h6>
+      {img && (
+        <figure>
+          <Image
+            src={img.src}
+            alt={img.alt}
+            width={img.width}
+            height={img.height}
+          />
+        </figure>
+      )}
+      {timeline && (
+        <h6 className='md:w-[22.5%] text-accent-foreground text-xs uppercase'>
+          {timeline}
+        </h6>
+      )}
       <div className='flex flex-col gap-1.5 md:w-[78.5%]'>
         <h3>
           <Link
@@ -44,7 +64,7 @@ export const Card = ({
               aria-hidden
               className='font-semibold'
             >
-              {jobTitle} • {company}
+              {title} {company && <>@ {company}</>}
               {''}
               <WiDirectionUpRight className='inline size-5' />
             </span>
