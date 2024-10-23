@@ -1,4 +1,5 @@
 import { Badge } from '@/components/section';
+import { cn } from '@/lib';
 import Image from 'next/image';
 import Link from 'next/link';
 import { WiDirectionUpRight } from 'react-icons/wi';
@@ -13,6 +14,7 @@ export type CardProps = {
   };
   timeline?: string;
   company?: string;
+  target?: '_blank' | '_self' | '_parent' | '_top';
   href: string;
   description: string;
   srText: string;
@@ -27,10 +29,11 @@ export const Card = ({
   description,
   srText,
   techStack,
+  target = '_self',
   img,
 }: CardProps) => {
   return (
-    <div className='lg:relative lg:z-[1] flex md:flex-row flex-col md:justify-between md:items-baseline gap-1.5 lg:gap-5 lg:hover:shadow-md lg:focus-within:shadow-md lg:p-4 lg:pb-5 lg:border lg:border-transparent lg:focus-within:border-border lg:hover:border-border rounded-md transition-all group'>
+    <div className='lg:relative lg:z-[1] flex sm:flex-row flex-col sm:justify-between sm:items-baseline gap-1.5 lg:gap-5 lg:hover:shadow-md lg:focus-within:shadow-md lg:p-4 lg:pb-5 lg:border lg:border-transparent lg:focus-within:border-border lg:hover:border-border rounded-md break-words transition-all group'>
       <Link
         href={href}
         aria-hidden
@@ -39,8 +42,9 @@ export const Card = ({
         className='lg:block z-[3] absolute inset-0 hidden size-full'
       />
       {img && (
-        <figure>
+        <figure className='md:w-[22.5%]'>
           <Image
+            className='w-fit text-accent-foreground text-xs uppercase'
             src={img.src}
             alt={img.alt}
             width={img.width}
@@ -49,11 +53,11 @@ export const Card = ({
         </figure>
       )}
       {timeline && (
-        <h6 className='md:w-[22.5%] text-accent-foreground text-xs uppercase'>
+        <h6 className='sm:w-[22.5%] text-accent-foreground text-xs uppercase'>
           {timeline}
         </h6>
       )}
-      <div className='flex flex-col gap-1.5 md:w-[78.5%]'>
+      <div className='flex flex-col gap-1.5 sm:w-[78.5%]'>
         <h3>
           <Link
             href={href}
@@ -62,16 +66,27 @@ export const Card = ({
           >
             <span
               aria-hidden
-              className='font-semibold'
+              className='font-semibold text-pretty'
             >
-              {title} {company && <>@ {company}</>}
-              {''}
-              <WiDirectionUpRight className='inline size-5' />
+              {title}{' '}
+              <span
+                aria-hidden
+                className='inline-block'
+              >
+                {company && <>{`@ ${company}`}</>}{' '}
+                <WiDirectionUpRight
+                  aria-hidden
+                  className={cn(
+                    'inline size-6',
+                    target === '_self' && 'rotate-45'
+                  )}
+                />
+              </span>
             </span>
             <span className='sr-only'>{srText}</span>
           </Link>
         </h3>
-        <p className='text-sm leading-normal'>{description}</p>
+        <p className='text-pretty text-sm leading-normal'>{description}</p>
         <ul
           className='flex flex-wrap gap-2 pt-2'
           aria-label='Technologies used.'

@@ -10,6 +10,7 @@ export const experienceData: CardProps[] = [
     srText:
       'Web developer student at TUC University College. Go to their website.',
     href: 'https://www.tucsweden.se/?gad_source=1&gclid=Cj0KCQjwmt24BhDPARIsAJFYKk1MssazM3SpAeBeotKwLmbpMmzpbxSW3qUSrjtlS1wX5PbkajQqCD8aAo9jEALw_wcB',
+    target: '_blank',
     techStack: [
       'React',
       'Angular',
@@ -35,6 +36,7 @@ export const experienceData: CardProps[] = [
       "I collaborated with another intern to develop a chatbot similar to ChatGPT. I handled the entire frontend, including managing chat logs, formatting responses, and creating an 'Agent Creator' that customizes bots based on user input. I also assisted with backend troubleshooting and gained experience with Docker and .NET.",
     srText: 'Fullstack developer internship at Combitech. Go to their website.',
     href: 'https://www.combitech.se',
+    target: '_blank',
     techStack: [
       'Next.js',
       'Tailwind CSS',

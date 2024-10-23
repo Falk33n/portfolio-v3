@@ -1,6 +1,7 @@
 'use client';
 
-import { type SectionId, useScrollPosition } from '@/hooks';
+import type { SectionId } from '@/components/section';
+import { useScrollPosition } from '@/hooks';
 import { cn } from '@/lib';
 import Link from 'next/link';
 import type { ReactNode } from 'react';

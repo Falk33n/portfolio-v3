@@ -1,6 +1,7 @@
-import type { SectionId } from '@/hooks';
 import { cn } from '@/lib';
 import type { ReactNode } from 'react';
+
+export type SectionId = 'about' | 'experience' | 'projects';
 
 type SectionProps = {
   id: SectionId;
