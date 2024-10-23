@@ -1,3 +1,4 @@
+import { Footer } from '@/components/footer';
 import { Sidebar } from '@/components/sidebar';
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
@@ -95,16 +96,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body
-        className={`${inter.className} antialiased flex flex-col gap-28 lg:flex-row lg:justify-between lg:gap-4 w-full px-6 md:px-12 lg:px-20 py-12 md:py-20 lg:py-24 xl:w-[1280px] xl:mx-auto`}
+        className={`${inter.className} antialiased lg:flex lg:flex-wrap lg:justify-between lg:gap-4 w-full px-6 md:px-12 lg:px-20 py-12 md:py-20 lg:py-24 xl:w-[1280px] xl:mx-auto`}
       >
         <Sidebar />
         <main
           aria-label='Main content.'
           id='main-content'
-          className='flex flex-col gap-16 lg:w-1/2'
+          className='flex flex-col lg:flex-shrink-0 lg:flex-1 gap-16 my-20 lg:mt-0 lg:w-1/2'
         >
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

@@ -6,7 +6,7 @@ export const Sidebar = () => {
   return (
     <nav
       aria-label='Main navigation.'
-      className='lg:top-24 lg:left-0 lg:sticky flex flex-col gap-7 lg:gap-16 lg:w-full max-w-[300px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[50%] lg:h-[calc(100vh-12rem)]'
+      className='lg:top-24 lg:left-0 lg:sticky flex flex-col lg:flex-shrink-0 lg:flex-1 gap-7 lg:gap-16 lg:w-full max-w-[300px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[50%] lg:h-[calc(100vh-12rem)]'
     >
       <Link
         href='#main-content'
