@@ -15,7 +15,7 @@ export const Experience = () => {
         ))}
         <Link
           href=''
-          className='lg:group-hover:text-primary mx-4 rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 w-fit lg:focus-visible:text-primary hover:text-primary transition-colors focus-visible:outline-none'
+          className='lg:group-hover:text-primary lg:mx-4 rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 w-fit lg:focus-visible:text-primary hover:text-primary transition-colors focus-visible:outline-none'
           target='_blank'
         >
           <span
