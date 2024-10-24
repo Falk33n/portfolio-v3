@@ -4,19 +4,20 @@ export const About = () => {
   return (
     <Section id='about'>
       <p>
-        I started my web development journey in 2023 and quickly grew passionate
-        about it. While studying at{' '}
+        I started my web development journey in{' '}
+        <time dateTime='2023'>2023</time> and quickly grew passionate about it.
+        While studying at{' '}
         <InlineLink
           href='https://www.tucsweden.se/?gad_source=1&gclid=Cj0KCQjwmt24BhDPARIsAJFYKk1MssazM3SpAeBeotKwLmbpMmzpbxSW3qUSrjtlS1wX5PbkajQqCD8aAo9jEALw_wcB'
-          srText="Go to TUC University College's website."
+          ariaLabel='TUC University College, Visit their swedish website, opens in a new tab'
         >
           TUC University College
         </InlineLink>{' '}
-        in Jönköping, I earned top grades. During my first internship, I
-        discovered the{' '}
+        in <span lang='sv'>Jönköping</span>, I earned top grades. During my
+        first internship, I discovered the{' '}
         <InlineLink
           href='https://create.t3.gg/en/introduction'
-          srText="Go to Next T3 Stack's website."
+          ariaLabel='Next T3 Stack, a React framework, Visit their website, opens in a new tab'
         >
           Next T3 Stack
         </InlineLink>
@@ -29,7 +30,7 @@ export const About = () => {
         also learning more about{' '}
         <InlineLink
           href='https://www.w3.org/WAI/standards-guidelines/#wcag3'
-          srText="Go to WCAG's website."
+          ariaLabel='Web Content Accessibility Guidelines, Visit their website, opens in a new tab'
         >
           WCAG
         </InlineLink>{' '}

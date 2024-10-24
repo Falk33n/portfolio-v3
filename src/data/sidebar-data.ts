@@ -6,20 +6,20 @@ import { MdMail } from 'react-icons/md';
 export const navLinkData: NavLinkProps[] = [
   {
     href: '#about',
-    srText: 'Go to about me.',
-    describes: 'about',
+    ariaLabel: 'Skip to the about section',
+    htmlFor: 'about',
     children: 'About',
   },
   {
     href: '#experience',
-    srText: 'Go to my experience.',
-    describes: 'experience',
+    ariaLabel: 'Skip to the experience section',
+    htmlFor: 'experience',
     children: 'Experience',
   },
   {
     href: '#projects',
-    srText: 'Go to my projects.',
-    describes: 'projects',
+    ariaLabel: 'Skip to the projects section',
+    htmlFor: 'projects',
     children: 'Projects',
   },
 ];
@@ -27,23 +27,23 @@ export const navLinkData: NavLinkProps[] = [
 export const navIconData: NavIconProps[] = [
   {
     href: 'https://github.com/falk33n',
-    srText: 'Go to my GitHub page.',
+    ariaLabel: 'Visit my GitHub profile, opens in a new tab',
     Icon: FaGithub,
   },
   {
     href: 'https://www.linkedin.com/in/timfalkwebbdev',
-    srText: 'Go to my LinkedIn page.',
+    ariaLabel: 'Visit my LinkedIn profile, opens in a new tab',
     Icon: FaLinkedin,
   },
   {
     href: 'mailto:tim.falk00@gmail.com',
-    target: '_self',
-    srText: 'Send an email to me.',
+    target: undefined,
+    ariaLabel: 'Send an email to me',
     Icon: MdMail,
   },
   {
     href: '',
-    srText: 'Go to my résumé.',
+    ariaLabel: 'View my résumé in PDF-format, opens in a new tab',
     Icon: IoDocumentText,
   },
 ];

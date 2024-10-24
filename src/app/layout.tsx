@@ -10,10 +10,11 @@ const inter = Inter({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
   style: ['normal', 'italic'],
+  preload: true,
 });
 
 export const metadata: Metadata = {
-  title: "Tim Falk's Portfolio | Full-Stack Developer",
+  title: 'Tim Falks Portfolio | Full-Stack Developer',
   description:
     'Tim Falk is a full-stack developer showcasing expertise in both front-end and back-end development with technologies like React, TypeScript, Node.js, tRPC, .NET and Prisma.',
   keywords:
@@ -100,7 +101,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <Sidebar />
         <main
-          aria-label='Main content.'
           id='main-content'
           className='flex flex-col lg:flex-shrink-0 lg:flex-1 gap-16 my-20 lg:mt-0 lg:w-1/2'
         >

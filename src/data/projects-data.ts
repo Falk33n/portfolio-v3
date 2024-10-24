@@ -11,8 +11,8 @@ export const projectsData: CardProps[] = [
     title: 'Test',
     description:
       'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ',
-    srText: 'Aria testing',
+    ariaLabel: 'Aria testing',
     href: '',
-    techStack: ['Test', 'Test', 'Test'],
+    techStack: [{ariaLabel: 'test aria', tech: 'test'}],
   },
 ];

@@ -69,4 +69,12 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  p {
+    @apply text-foreground/85;
+  }
+
+  a {
+    @apply text-foreground;
+  }
 }

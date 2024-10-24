@@ -2,6 +2,7 @@ import { Badge } from '@/components/section';
 import { cn } from '@/lib';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { WiDirectionUpRight } from 'react-icons/wi';
 
 export type CardProps = {
@@ -12,13 +13,13 @@ export type CardProps = {
     width: number;
     height: number;
   };
-  timeline?: string;
+  timeline?: ReactNode;
   company?: string;
   target?: '_blank' | '_self' | '_parent' | '_top';
   href: string;
-  description: string;
-  srText: string;
-  techStack: string[];
+  description: ReactNode;
+  ariaLabel: string;
+  techStack: { ariaLabel: string; tech: string }[];
 };
 
 export const Card = ({
@@ -27,19 +28,19 @@ export const Card = ({
   company,
   href,
   description,
-  srText,
+  ariaLabel,
   techStack,
   target = '_self',
   img,
 }: CardProps) => {
   return (
-    <div className='lg:relative lg:z-[1] flex sm:flex-row flex-col sm:justify-between sm:items-baseline gap-1.5 lg:gap-5 lg:hover:shadow-md lg:focus-within:shadow-md lg:p-4 lg:pb-5 lg:border lg:border-transparent lg:focus-within:border-border lg:hover:border-border rounded-md break-words transition-all group'>
+    <div className='lg:relative flex sm:flex-row flex-col sm:justify-between sm:items-baseline gap-1.5 lg:gap-5 lg:hover:shadow-md lg:focus-within:shadow-md lg:p-4 lg:pb-5 lg:border lg:border-transparent lg:focus-within:border-border lg:hover:border-border rounded-md break-words transition-all group'>
       <Link
         href={href}
         aria-hidden
         target='_blank'
         tabIndex={-1}
-        className='lg:block z-[3] absolute inset-0 hidden size-full'
+        className='lg:block absolute inset-0 hidden size-full'
       />
       {img && (
         <figure className='md:w-[22.5%]'>
@@ -53,16 +54,17 @@ export const Card = ({
         </figure>
       )}
       {timeline && (
-        <h6 className='sm:w-[22.5%] text-accent-foreground text-xs uppercase'>
+        <h4 className='sm:w-[22.5%] text-accent-foreground text-xs uppercase'>
           {timeline}
-        </h6>
+        </h4>
       )}
       <div className='flex flex-col gap-1.5 sm:w-[78.5%]'>
-        <h3>
+        <h5>
           <Link
             href={href}
-            className='lg:group-hover:text-primary inline-flex rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 lg:focus-visible:text-primary hover:text-primary transition-colors focus-visible:outline-none'
+            className='lg:group-[:hover:not(:has(.inlineLink:hover))]:text-primary inline-flex rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 lg:focus-visible:text-primary hover:text-primary transition-colors focus-visible:outline-none'
             target='_blank'
+            aria-label={ariaLabel}
           >
             <span
               aria-hidden
@@ -83,16 +85,22 @@ export const Card = ({
                 />
               </span>
             </span>
-            <span className='sr-only'>{srText}</span>
           </Link>
-        </h3>
-        <p className='text-pretty text-sm leading-normal'>{description}</p>
+        </h5>
+        <div className='flex flex-col gap-2 text-pretty text-sm leading-normal'>
+          {description}
+        </div>
         <ul
           className='flex flex-wrap gap-2 pt-2'
           aria-label='Technologies used.'
         >
-          {techStack.map((tech, i) => (
-            <Badge key={i}>{tech}</Badge>
+          {techStack.map((data, i) => (
+            <Badge
+              ariaLabel={data.ariaLabel}
+              key={i}
+            >
+              {data.tech}
+            </Badge>
           ))}
         </ul>
       </div>
