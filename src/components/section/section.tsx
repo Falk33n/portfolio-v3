@@ -11,11 +11,11 @@ type SectionProps = {
 const getAriaLabel = (id: SectionId) => {
   switch (id) {
     case 'projects':
-      return 'Projects section.';
+      return 'Projects section';
     case 'about':
-      return 'About section.';
+      return 'About section';
     default:
-      return 'Experience section.';
+      return 'Experience section';
   }
 };
 

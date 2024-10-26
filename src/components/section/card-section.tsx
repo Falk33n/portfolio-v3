@@ -8,22 +8,18 @@ import { cn } from '@/lib';
 import Link from 'next/link';
 import { WiDirectionUpRight } from 'react-icons/wi';
 
-type ItemListSectionProps = {
+type CardSectionProps = {
   id: SectionId;
   dataArray: CardProps[];
   link: {
     href: string;
     target?: '_blank' | '_self' | '_parent' | '_top';
-    srText: string;
+    ariaLabel: string;
     text: string;
   };
 };
 
-export const ItemListSection = ({
-  id,
-  dataArray,
-  link,
-}: ItemListSectionProps) => {
+export const CardSection = ({ id, dataArray, link }: CardSectionProps) => {
   return (
     <Section id={id}>
       <div className='flex flex-col gap-12'>
@@ -37,6 +33,7 @@ export const ItemListSection = ({
           href={link.href}
           className='lg:group-hover:text-primary lg:mx-4 rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 w-fit lg:focus-visible:text-primary hover:text-primary transition-colors focus-visible:outline-none'
           target={link.target}
+          aria-label={link.ariaLabel}
         >
           <span
             aria-hidden
@@ -51,11 +48,10 @@ export const ItemListSection = ({
               )}
             />
           </span>
-          <span className='sr-only'>{link.srText}</span>
         </Link>
       </div>
     </Section>
   );
 };
 
-ItemListSection.displayName = 'ItemListSection';
+CardSection.displayName = 'CardSection';

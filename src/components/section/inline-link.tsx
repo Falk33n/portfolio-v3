@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 
 type InlineLinkProps = {
   href: string;
-  srText: string;
+  ariaLabel: string;
   children: ReactNode;
   target?: '_blank' | '_self' | '_parent' | '_top';
   className?: string;
@@ -12,7 +12,7 @@ type InlineLinkProps = {
 
 export const InlineLink = ({
   href,
-  srText,
+  ariaLabel,
   children,
   className,
   target = '_blank',
@@ -21,13 +21,14 @@ export const InlineLink = ({
     <Link
       href={href}
       className={cn(
-        'rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 hover:text-primary underline underline-offset-2 transition-colors focus-visible:outline-none',
+        'inline rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 hover:text-primary underline underline-offset-2 transition-colors focus-visible:outline-none inlineLink lg:relative lg:z-[5]',
         className
       )}
+      rel={target === '_blank' ? 'noopener noreferrer' : undefined}
       target={target}
+      aria-label={ariaLabel}
     >
-      <span aria-hidden>{children}</span>
-      <span className='sr-only'>{srText}</span>
+      {children}
     </Link>
   );
 };

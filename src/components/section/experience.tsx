@@ -1,15 +1,15 @@
-import { ItemListSection } from '@/components/section';
+import { CardSection } from '@/components/section';
 import { experienceData } from '@/data';
 
 export const Experience = () => {
   return (
-    <ItemListSection
+    <CardSection
       id='experience'
       dataArray={experienceData}
       link={{
         href: '',
         target: '_blank',
-        srText: 'Go to my full Résumé.',
+        ariaLabel: 'Go to my full Résumé.',
         text: 'View full Résumé',
       }}
     />

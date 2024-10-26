@@ -8,35 +8,35 @@ export const Footer = () => {
           Created in{' '}
           <InlineLink
             href='https://code.visualstudio.com'
-            srText="Go to Visual Studio's website."
+            ariaLabel='VS Code, Visit the Visual Studio website, a code editor, opens in a new tab'
           >
             VS Code
           </InlineLink>{' '}
           by me. Built using{' '}
           <InlineLink
             href='https://tailwindcss.com'
-            srText="Go to Tailwind CSS's website."
+            ariaLabel='Tailwind CSS, Visit the Tailwind CSS website, a utility-first CSS framework, opens in a new tab'
           >
             Tailwind CSS
           </InlineLink>{' '}
           and{' '}
           <InlineLink
             href='https://nextjs.org'
-            srText="Go to Next.js's website."
+            ariaLabel='Next.js, Visit the Next.js website, a React framework, opens in a new tab'
           >
             Next.js
           </InlineLink>{' '}
           , with colors from{' '}
           <InlineLink
             href='https://ui.shadcn.com'
-            srText="Go to ShadCn's website."
+            ariaLabel='ShadCn, Visit the ShadCn website, a component library, opens in a new tab'
           >
             ShadCn
           </InlineLink>{' '}
           . All text is set in the{' '}
           <InlineLink
             href='https://rsms.me/inter'
-            srText="Go to Inter's website."
+            ariaLabel='Inter, Visit the Inter typeface website, opens in a new tab'
           >
             Inter
           </InlineLink>{' '}
