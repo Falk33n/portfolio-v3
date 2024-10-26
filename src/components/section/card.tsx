@@ -62,7 +62,7 @@ export const Card = ({
         <h5>
           <Link
             href={href}
-            className='lg:group-[:hover:not(:has(.inlineLink:hover))]:text-primary inline-flex rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 lg:focus-visible:text-primary hover:text-primary transition-colors focus-visible:outline-none'
+            className='lg:group-[:hover:not(:has(.inlineLink:hover))]:text-primary inline-flex rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 lg:focus-visible:text-primary hover:text-primary transition-colors group focus-visible:outline-none'
             target='_blank'
             aria-label={ariaLabel}
           >
@@ -70,17 +70,19 @@ export const Card = ({
               aria-hidden
               className='font-semibold text-pretty'
             >
-              {title}{' '}
+              {title}
               <span
                 aria-hidden
                 className='inline'
               >
-                {company && <>{`@ ${company}`}</>}{' '}
+                {company && <>{` @ ${company} `}</>}
                 <WiDirectionUpRight
                   aria-hidden
                   className={cn(
-                    'inline size-6',
-                    target === '_self' && 'rotate-45'
+                    'inline size-6 transition-transform',
+                    target === '_self'
+                      ? 'rotate-45 group-hover:translate-x-1.5 group-focus-visible:translate-x-1.5'
+                      : 'group-hover:-translate-y-1.5 group-hover:translate-x-1 group-focus-visible:-translate-y-1.5 group-focus-visible:translate-x-1'
                   )}
                 />
               </span>

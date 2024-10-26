@@ -22,6 +22,15 @@ export const NavLink = ({
   const activeSection = useScrollPosition();
   const isCurrent = activeSection === htmlFor;
 
+  const handleClick = () => {
+    const section = document.getElementById(htmlFor);
+    if (section) {
+      section.tabIndex = 0;
+      section.focus();
+      section.tabIndex = -1;
+    }
+  };
+
   return (
     <Link
       href={href}
@@ -32,6 +41,7 @@ export const NavLink = ({
       data-is-current={isCurrent}
       aria-label={ariaLabel}
       aria-current={isCurrent}
+      onClick={handleClick}
     >
       {children}
     </Link>
