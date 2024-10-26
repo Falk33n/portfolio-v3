@@ -122,7 +122,7 @@ export const experienceData: CardProps[] = [
           troubleshooting and gained experience with{' '}
           <InlineLink
             href='https://www.docker.com'
-            ariaLabel='Docker, a container platform, Visit their website, opens in a new tab'
+            ariaLabel='Docker, a container developing platform, Visit their website, opens in a new tab'
           >
             Docker
           </InlineLink>{' '}
