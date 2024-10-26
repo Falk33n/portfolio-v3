@@ -142,18 +142,28 @@ export const experienceData: CardProps[] = [
     href: 'https://www.combitech.se',
     target: '_blank',
     techStack: [
-      /*  'Next.js',
-      'Tailwind CSS',
-      'React',
-      'Git',
-      'ShadCn',
-      'Docker',
-      '.NET',
-      'C#',
-      'TypeScript',
-      'Accessibility',
-      'Scrum',
-      'Agile', */
+      { ariaLabel: 'Next.js, a React framework', tech: 'Next.js' },
+      { ariaLabel: 'React, a JavaScript framework', tech: 'React' },
+      {
+        ariaLabel: 'Tailwind CSS, a utility-first CSS framework',
+        tech: 'Tailwind CSS',
+      },
+      { ariaLabel: 'Docker, a container developing platform', tech: 'Docker' },
+      { ariaLabel: 'ShadCn, a React component library', tech: 'ShadCn' },
+      {
+        ariaLabel: 'TypeScript, a typed extension of JavaScript',
+        tech: 'TypeScript',
+      },
+      { ariaLabel: 'Git, a version control system', tech: 'Git' },
+      { ariaLabel: 'Scrum, a project management method', tech: 'Scrum' },
+      { ariaLabel: 'Agile, a method of project management', tech: 'Agile' },
+      { ariaLabel: '.NET, a C# framework', tech: '.NET' },
+      { ariaLabel: 'C#, a programming language', tech: 'C#' },
+      {
+        ariaLabel:
+          'Accessibility, a standard to make the website available for people with disabilities',
+        tech: 'Accessibility',
+      },
     ],
   },
 ];

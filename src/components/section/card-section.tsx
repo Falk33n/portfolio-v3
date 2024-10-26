@@ -31,7 +31,7 @@ export const CardSection = ({ id, dataArray, link }: CardSectionProps) => {
         ))}
         <Link
           href={link.href}
-          className='lg:group-hover:text-primary lg:mx-4 rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 w-fit lg:focus-visible:text-primary hover:text-primary transition-colors focus-visible:outline-none'
+          className='lg:group-hover:text-primary lg:mx-4 rounded focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 w-fit lg:focus-visible:text-primary hover:text-primary transition-colors group focus-visible:outline-none'
           target={link.target}
           aria-label={link.ariaLabel}
         >
@@ -43,8 +43,10 @@ export const CardSection = ({ id, dataArray, link }: CardSectionProps) => {
             {''}
             <WiDirectionUpRight
               className={cn(
-                'inline size-6',
-                link.target === '_self' && 'rotate-45'
+                'inline size-6 transition-transform',
+                link.target === '_self'
+                  ? 'rotate-45 group-hover:translate-x-1.5 group-focus-visible:translate-x-1.5'
+                  : 'group-hover:-translate-y-1.5 group-hover:translate-x-1 group-focus-visible:-translate-y-1.5 group-focus-visible:translate-x-1'
               )}
             />
           </span>
